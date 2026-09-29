@@ -13,6 +13,13 @@ class SIGNUP:
     create_account="//span[text()='Create Account']"
     number='//input[@placeholder="9876543210"]'
     conti="//span[text()='Continue']"
+    farmer_rent="//p[text()='Browse and book agricultural equipment for your farm']"
+    c_btn="//button[text()='Continue']"
+    co_btn="//button[text()='Continue']"
+    address_ele='//input[@placeholder="Village, District, State"]'
+    pin='//input[@placeholder="6-digit pincode"]'
+    complete="//button[text()='Complete Setup']"
+
 
 
 
@@ -48,8 +55,29 @@ class SIGNUP:
         time.sleep(2)
     def click_continue(self):
         self.driver.find_element('xpath',self.conti).click()
+        time.sleep(3)
+    def click_farmer(self):
+        self.driver.find_element('xpath',self.farmer_rent).click()
+        time.sleep(2)
+    def click_continue_1(self):
+        self.driver.find_element('xpath',self.c_btn).click()
         time.sleep(2)
 
+    def click_continue_2(self):
+        self.driver.find_element('xpath',self.co_btn).click()
+        time.sleep(3)
+
+    def pass_address(self,address):
+        self.driver.find_element('xpath', self.address_ele).send_keys(address)
+        time.sleep(3)
+
+    def pass_pin(self,pincode):
+        self.driver.find_element('xpath', self.pin).send_keys(pincode)
+        time.sleep(3)
+
+    def click_complete(self):
+        self.driver.find_element('xpath', self.complete).click()
+        time.sleep(3)
 
 
 

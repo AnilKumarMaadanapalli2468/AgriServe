@@ -9,7 +9,7 @@ def setup():
     driver = webdriver.Chrome()
     driver.implicitly_wait(30)
     driver.maximize_window()
-    driver.get(r'https://agrirental.vercel.app/login?redirect=%2Fdashboard')
+    driver.get(r'https://agrirental.vercel.app/')
     yield driver
     driver.close()
 
