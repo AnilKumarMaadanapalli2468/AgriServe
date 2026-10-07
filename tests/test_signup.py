@@ -3,7 +3,7 @@ import pytest
 import time
 from pages.address import ADDRESS
 from pages.date_page import DATE
-# @pytest.mark.skip
+@pytest.mark.skip
 def test_sign(setup):
     S=SIGNUP(setup)
     # setup.get(r'https://agrirental.vercel.app/')

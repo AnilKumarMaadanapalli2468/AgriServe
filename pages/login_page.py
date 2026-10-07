@@ -8,10 +8,15 @@ class Login:
     email='//input[@placeholder="you@example.com"]'
     password='//input[@placeholder="Enter your password"]'
     submit="//span[text()='Sign In']"
+    sign_in="//button[text()='Sign In']"
 
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
+    def click_signin(self):
+        signin_ele=self.wait.until(EC.element_to_be_clickable(('xpath',self.sign_in)))
+        ActionChains(self.driver).move_to_element(signin_ele).perform()
+        signin_ele.click()
 
     def pass_mail(self, mail):
         self.driver.find_element('xpath', self.email).send_keys(mail)

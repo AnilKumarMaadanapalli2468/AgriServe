@@ -15,7 +15,7 @@ class TRACTOR:
     city = '//select[@class="w-full appearance-none rounded-lg border border-gray-700 bg-[#252525] px-4 py-2.5 text-white transition-opacity focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 disabled:cursor-not-allowed disabled:opacity-50"]'
     apply_filter = "//button[text()='Apply Filters']"
     book_now='(//button[@class="flex flex-1 items-center justify-center gap-2 rounded-full bg-cyan-500 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cyan-400"])[1]'
-    date_select='//button[@aria-label="Wednesday, September 30th, 2026"]'
+    date_select='//button[@aria-label="Thursday, October 8th, 2026"]'
     proceed="(//button[text()='Proceed to Pay'])[2]"
     click_pending='(//div[@class="flex gap-4"])[1]'
     cancel='//button[@class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border h-10 px-4 py-2 w-full cursor-pointer border-red-500/30 bg-red-500/5 text-red-400 transition-all duration-200 hover:border-red-500 hover:bg-red-500/10"]'
@@ -69,7 +69,8 @@ class TRACTOR:
 
         time.sleep(2)
     def click_proceed(self):
-        self.driver.find_element('xpath',self.proceed).click()
+        proceed_ele=self.wait.until(EC.element_to_be_clickable(('xpath',self.proceed)))
+        proceed_ele.click()
         time.sleep(1)
     def click_on_pending(self):
         self.driver.find_element('xpath',self.click_pending).click()

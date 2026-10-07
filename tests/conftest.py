@@ -1,7 +1,6 @@
 import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 
-
 @pytest.fixture()
 def setup():
     import time
